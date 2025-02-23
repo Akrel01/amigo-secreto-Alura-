@@ -1,17 +1,16 @@
 let nombreDeAmigos = []
 
-let btnAdd = document.getElementsByClassName('button-add')
-btnAdd.addEventListener('onclick', agregarAmigo())
+
 
 //Funcion para agregar amigos
 function agregarAmigo(){
 
     const inputAmigo = document.getElementById('amigo');
 
-    const nombreAmigo = inputAmigo.ariaValueMax.trim() ; 
+        const nombreAmigo = inputAmigo.value.trim(); 
 
         //Validacion de contenido
-        if (nombre === '') {
+        if (nombreAmigo === "") {
             
             alert("Por favor, ingresar un nombre")
             return;
@@ -27,7 +26,7 @@ function agregarAmigo(){
 
         nombreDeAmigos.push(nombreAmigo);
 
-        inputAmigo.ariaValue = ""
+        inputAmigo.value = "";
 
 
         actualizarLista();
@@ -42,12 +41,12 @@ function actualizarLista() {
     const listaAmigos = document.getElementById('listaAmigos');
 
 
-        listaAmigos. innerHTML = "";
+        listaAmigos.innerHTML = "";
 
         for (let i = 0; i < nombreDeAmigos.length; i++) {
-            const li = document.createElement['li'];
+            const li = document.createElement('li');
 
-            li.textContent = listaAmigos[i] ; 
+            li.textContent = nombreDeAmigos[i]; 
             listaAmigos.appendChild(li);
             
         }
@@ -64,7 +63,7 @@ function actualizarLista() {
         }
 
 
-        const indiceAleatorio = Math.floor(Math.random() * amigos.length);
+        const indiceAleatorio = Math.floor(Math.random() * nombreDeAmigos.length);
 
         const amigoSorteado = nombreDeAmigos[indiceAleatorio];
 
