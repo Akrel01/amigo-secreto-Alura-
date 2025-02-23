@@ -1,8 +1,10 @@
 let nombreDeAmigos = []
 
+let btnAdd = document.getElementsByClassName('button-add')
+btnAdd.addEventListener('onclick', agregarAmigo())
 
 //Funcion para agregar amigos
-function agregarAmigos(){
+function agregarAmigo(){
 
     const inputAmigo = document.getElementById('amigo');
 
